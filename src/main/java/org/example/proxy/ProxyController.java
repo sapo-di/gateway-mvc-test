@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ProxyController {
+
     @RequestMapping(path = "/api/{*tail}")
     @ResponseBody
     public void useExchange(@PathVariable("tail") String tail, ProxyExchange<byte[]> exchange) {
