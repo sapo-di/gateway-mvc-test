@@ -1,0 +1,7 @@
+POST localhost:8080/api/legacy-route
+Content-Type: application/json
+
+{
+  "id" : "unique",
+  "umlaut": "ä"
+}

@@ -1,0 +1,26 @@
+###
+# Request to be forwarded but
+POST http://localhost:8080/multipart
+Content-Type: multipart/form-data; boundary=FooBar
+
+--FooBar
+Content-Disposition: form-data; name="test"
+Content-Type: text/plain
+
+I want to be forwarded
+--FooBar--
+
+###
+
+###
+POST http://localhost:8081/incoming
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Authorization: Basic user password
+Accept: */*
+
+--WebAppBoundary
+Content-Disposition: form-data; name="test"
+Content-Type: text/plain
+
+I work flawlessly
+--WebAppBoundary--
